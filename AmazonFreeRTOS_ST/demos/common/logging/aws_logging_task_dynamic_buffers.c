@@ -84,7 +84,7 @@ static QueueHandle_t xQueue = NULL;
 
 BaseType_t xLoggingTaskInitialize( uint16_t usStackSize, UBaseType_t uxPriority, UBaseType_t uxQueueLength )
 {
-BaseType_t xReturn = pdFAIL;
+	BaseType_t xReturn = pdFAIL;
 
     /* Ensure the logging task has not been created already. */
     if( xQueue == NULL )

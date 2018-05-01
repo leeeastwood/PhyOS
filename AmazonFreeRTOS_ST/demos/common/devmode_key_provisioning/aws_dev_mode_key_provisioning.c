@@ -46,7 +46,7 @@
 #include "aws_pkcs11.h"
 
 /* Client credential includes. */
-#include "aws_clientcredential.h"
+//#include "aws_clientcredential.h"
 #include "aws_default_root_certificates.h"
 
 /* Key provisioning includes. */
@@ -124,16 +124,16 @@ void vDevModeKeyProvisioning( void )
     xPrivateKeyTemplate[ 2 ].pValue = &xCanSign;
     xPrivateKeyTemplate[ 2 ].ulValueLen = sizeof( xCanSign );
     xPrivateKeyTemplate[ 3 ].type = CKA_VALUE;
-    xPrivateKeyTemplate[ 3 ].pValue = ( CK_VOID_PTR )clientcredentialCLIENT_PRIVATE_KEY_PEM;
-    xPrivateKeyTemplate[ 3 ].ulValueLen = ( CK_ULONG )clientcredentialCLIENT_PRIVATE_KEY_LENGTH;
+    //xPrivateKeyTemplate[ 3 ].pValue = ( CK_VOID_PTR )clientcredentialCLIENT_PRIVATE_KEY_PEM;
+    //xPrivateKeyTemplate[ 3 ].ulValueLen = ( CK_ULONG )clientcredentialCLIENT_PRIVATE_KEY_LENGTH;
 
     /* Initialize the client certificate template. */
     xCertificateTemplate[ 0 ].type = CKA_CLASS;
     xCertificateTemplate[ 0 ].pValue = &xCertificateClass;
     xCertificateTemplate[ 0 ].ulValueLen = sizeof( xCertificateClass );
     xCertificateTemplate[ 1 ].type = CKA_VALUE;
-    xCertificateTemplate[ 1 ].pValue = ( CK_VOID_PTR )clientcredentialCLIENT_CERTIFICATE_PEM;
-    xCertificateTemplate[ 1 ].ulValueLen = ( CK_ULONG )clientcredentialCLIENT_CERTIFICATE_LENGTH;
+    //xCertificateTemplate[ 1 ].pValue = ( CK_VOID_PTR )clientcredentialCLIENT_CERTIFICATE_PEM;
+    //xCertificateTemplate[ 1 ].ulValueLen = ( CK_ULONG )clientcredentialCLIENT_CERTIFICATE_LENGTH;
     xCertificateTemplate[ 2 ].type = CKA_CERTIFICATE_TYPE;
     xCertificateTemplate[ 2 ].pValue = &xDeviceCertificateType;
     xCertificateTemplate[ 2 ].ulValueLen = sizeof( xDeviceCertificateType );
@@ -143,8 +143,8 @@ void vDevModeKeyProvisioning( void )
     xRootCertificateTemplate[ 0 ].pValue = &xCertificateClass;
     xRootCertificateTemplate[ 0 ].ulValueLen = sizeof( xCertificateClass );
     xRootCertificateTemplate[ 1 ].type = CKA_VALUE;
-    xRootCertificateTemplate[ 1 ].pValue = ( CK_VOID_PTR )tlsVERISIGN_ROOT_CERTIFICATE_PEM;
-    xRootCertificateTemplate[ 1 ].ulValueLen = ( CK_ULONG )tlsVERISIGN_ROOT_CERTIFICATE_LENGTH;
+    //xRootCertificateTemplate[ 1 ].pValue = ( CK_VOID_PTR )tlsVERISIGN_ROOT_CERTIFICATE_PEM;
+    //xRootCertificateTemplate[ 1 ].ulValueLen = ( CK_ULONG )tlsVERISIGN_ROOT_CERTIFICATE_LENGTH;
     xRootCertificateTemplate[ 2 ].type = CKA_CERTIFICATE_TYPE;
     xRootCertificateTemplate[ 2 ].pValue = &xRootCertificateType;
     xRootCertificateTemplate[ 2 ].ulValueLen = sizeof( xRootCertificateType );
@@ -154,7 +154,7 @@ void vDevModeKeyProvisioning( void )
                              &xSlotId,
                              &xSession );
 
-    /* 
+    /*
      * Check that a certificate and private key can be imported into
      * persistent storage.
      */

@@ -27,9 +27,8 @@
 #include "aws_system_init.h"
 
 /* Library code. */
-extern BaseType_t MQTT_AGENT_Init( void );
 extern BaseType_t BUFFERPOOL_Init( void );
-extern BaseType_t SOCKETS_Init( void );
+//extern BaseType_t SOCKETS_Init( void );
 
 /*-----------------------------------------------------------*/
 
@@ -40,7 +39,7 @@ BaseType_t SYSTEM_Init( void )
 {
     BaseType_t xResult = pdPASS;
 
-    xResult = MQTT_AGENT_Init();
+    //xResult = MQTT_AGENT_Init();
 
     if( xResult == pdPASS )
     {
@@ -49,7 +48,7 @@ BaseType_t SYSTEM_Init( void )
 
     if( xResult == pdPASS )
     {
-        xResult = SOCKETS_Init();
+        //xResult = SOCKETS_Init();
     }
 
     return xResult;

@@ -28,9 +28,9 @@
 #include "FreeRTOSIPConfig.h"
 #include "aws_tls.h"
 #include "aws_crypto.h"
-#include "aws_pkcs11.h"
+//#include "aws_pkcs11.h"
 #include "task.h"
-#include "aws_clientcredential.h"
+//#include "aws_clientcredential.h"
 #include "aws_default_root_certificates.h"
 
 /* TODO */
@@ -630,6 +630,7 @@ void TLS_Cleanup( void * pvContext )
         mbedtls_ssl_free( &pCtx->mbedSslCtx );
         mbedtls_ssl_config_free( &pCtx->mbedSslConfig );
 
+/*
         /* Cleanup PKCS#11. */
         if( ( NULL != pCtx->pxP11FunctionList ) &&
             ( NULL != pCtx->pxP11FunctionList->C_CloseSession ) )
@@ -637,7 +638,7 @@ void TLS_Cleanup( void * pvContext )
             pCtx->pxP11FunctionList->C_CloseSession( pCtx->xP11Session ); /*lint !e534 This function always return CKR_OK. */
             pCtx->pxP11FunctionList->C_Finalize( NULL );                  /*lint !e534 This function always return CKR_OK. */
         }
-
+*/
         /* Free memory. */
         vPortFree( pCtx );
     }

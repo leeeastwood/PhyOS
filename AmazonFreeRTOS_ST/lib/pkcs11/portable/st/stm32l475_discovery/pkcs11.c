@@ -46,7 +46,7 @@
 #include "mbedtls/entropy.h"
 #include "mbedtls/sha256.h"
 #include "mbedtls/base64.h"
-#include "aws_clientcredential.h"
+//#include "aws_clientcredential.h"
 
 /* C runtime includes. */
 #include <stdio.h>
@@ -402,30 +402,6 @@ static CK_RV prvLoadAndInitializeDefaultCertificateAndKey( P11SessionPtr_t pxSes
     uint8_t * pucKeyData = NULL;
     uint32_t ulKeyDataLength = 0;
 
-    /* Read the certificate from storage. */
-    if( pdFALSE == prvReadFile( pkcs11FILE_NAME_CLIENT_CERTIFICATE,
-                                &pucCertificateData,
-                                &ulCertificateDataLength ) )
-    {
-        pucCertificateData = ( uint8_t * ) clientcredentialCLIENT_CERTIFICATE_PEM;
-        ulCertificateDataLength = clientcredentialCLIENT_CERTIFICATE_LENGTH;
-    }
-
-    /* Read the private key from storage. */
-    if( pdFALSE == prvReadFile( pkcs11FILE_NAME_KEY,
-                                &pucKeyData,
-                                &ulKeyDataLength ) )
-    {
-        pucKeyData = ( uint8_t * ) clientcredentialCLIENT_PRIVATE_KEY_PEM;
-        ulKeyDataLength = clientcredentialCLIENT_PRIVATE_KEY_LENGTH;
-    }
-
-    /* Attach the certificate and key to the session. */
-    xResult = prvInitializeKey( pxSession,
-                                ( const char * ) pucKeyData,
-                                ulKeyDataLength,
-                                ( const char * ) pucCertificateData,
-                                ulCertificateDataLength );
 
     /* Stir the random pot. */
     mbedtls_entropy_update_manual( &pxSession->xMbedEntropyContext,

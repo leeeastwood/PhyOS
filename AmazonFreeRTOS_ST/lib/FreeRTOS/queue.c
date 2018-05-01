@@ -346,7 +346,6 @@ Queue_t * const pxQueue = ( Queue_t * ) xQueue;
 		{
 			traceQUEUE_CREATE_FAILED( ucQueueType );
 		}
-
 		return pxNewQueue;
 	}
 

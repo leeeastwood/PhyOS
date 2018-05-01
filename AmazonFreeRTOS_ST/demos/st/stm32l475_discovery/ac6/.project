@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><projectDescription>
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
 	<name>aws_demos</name>
-	<comment/>
+	<comment></comment>
 	<projects>
 	</projects>
 	<buildSpec>
@@ -55,16 +56,6 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>application_code/common_demos/include</name>
-			<type>2</type>
-			<locationURI>AWS_IOT_MCU_ROOT/demos/common/include</locationURI>
-		</link>
-		<link>
-			<name>application_code/common_demos/source</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
 			<name>lib/aws/FreeRTOS</name>
 			<type>2</type>
 			<locationURI>AWS_IOT_MCU_ROOT/lib/FreeRTOS</locationURI>
@@ -79,45 +70,16 @@
 			<type>2</type>
 			<locationURI>AWS_IOT_MCU_ROOT/lib/crypto</locationURI>
 		</link>
-		
 		<link>
 			<name>lib/aws/include</name>
 			<type>2</type>
 			<locationURI>AWS_IOT_MCU_ROOT/lib/include</locationURI>
 		</link>
 		<link>
-			<name>lib/aws/mqtt</name>
-			<type>2</type>
-			<locationURI>AWS_IOT_MCU_ROOT/lib/mqtt</locationURI>
-		</link>
-		
-		<link>
-			<name>lib/aws/pkcs11</name>
-			<type>2</type>
-			<locationURI>AWS_IOT_MCU_ROOT/lib/pkcs11/portable/st/stm32l475_discovery</locationURI>
-		</link>
-		<link>
-			<name>lib/aws/secure_sockets</name>
-			<type>2</type>
-			<locationURI>AWS_IOT_MCU_ROOT/lib/secure_sockets/portable/st/stm32l475_discovery</locationURI>
-		</link>
-		
-		<link>
-			<name>lib/aws/tls</name>
-			<type>2</type>
-			<locationURI>AWS_IOT_MCU_ROOT/lib/tls</locationURI>
-		</link>
-		<link>
 			<name>lib/aws/utils</name>
 			<type>2</type>
 			<locationURI>AWS_IOT_MCU_ROOT/lib/utils</locationURI>
 		</link>
-		<link>
-			<name>lib/aws/wifi</name>
-			<type>2</type>
-			<locationURI>AWS_IOT_MCU_ROOT/lib/wifi/portable/st/stm32l475_discovery</locationURI>
-		</link>
-		
 		<link>
 			<name>lib/third_party/mbedtls</name>
 			<type>2</type>
@@ -128,57 +90,6 @@
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
-		<link>
-			<name>lib/third_party/pkcs11</name>
-			<type>2</type>
-			<locationURI>AWS_IOT_MCU_ROOT/lib/third_party/pkcs11</locationURI>
-		</link>
-		
-		<link>
-			<name>application_code/common_demos/include/aws_application_version.h</name>
-			<type>1</type>
-			<locationURI>AWS_IOT_MCU_ROOT/demos/common/include/aws_application_version.h</locationURI>
-		</link>
-		<link>
-			<name>application_code/common_demos/include/aws_clientcredential_keys.h</name>
-			<type>1</type>
-			<locationURI>AWS_IOT_MCU_ROOT/demos/common/include/aws_clientcredential_keys.h</locationURI>
-		</link>
-		<link>
-			<name>application_code/common_demos/include/aws_dev_mode_key_provisioning.h</name>
-			<type>1</type>
-			<locationURI>AWS_IOT_MCU_ROOT/demos/common/include/aws_dev_mode_key_provisioning.h</locationURI>
-		</link>
-		<link>
-			<name>application_code/common_demos/source/aws_demo_runner.c</name>
-			<type>1</type>
-			<locationURI>AWS_IOT_MCU_ROOT/demos/common/demo_runner/aws_demo_runner.c</locationURI>
-		</link>
-		<link>
-			<name>application_code/common_demos/source/aws_dev_mode_key_provisioning.c</name>
-			<type>1</type>
-			<locationURI>AWS_IOT_MCU_ROOT/demos/common/devmode_key_provisioning/aws_dev_mode_key_provisioning.c</locationURI>
-		</link>
-		
-		<link>
-			<name>application_code/common_demos/source/aws_hello_world.c</name>
-			<type>1</type>
-			<locationURI>AWS_IOT_MCU_ROOT/demos/common/mqtt/aws_hello_world.c</locationURI>
-		</link>
-		<link>
-			<name>application_code/common_demos/source/aws_logging_task_dynamic_buffers.c</name>
-			<type>1</type>
-			<locationURI>AWS_IOT_MCU_ROOT/demos/common/logging/aws_logging_task_dynamic_buffers.c</locationURI>
-		</link>
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		<link>
 			<name>lib/third_party/mbedtls/include</name>
 			<type>2</type>

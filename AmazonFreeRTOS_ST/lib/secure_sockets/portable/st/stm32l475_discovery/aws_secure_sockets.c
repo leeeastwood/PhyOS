@@ -38,15 +38,15 @@
 #include "aws_tls.h"
 
 /* WiFi driver includes. */
-#include "es_wifi.h"
-#include "es_wifi_io.h"
+//#include "es_wifi.h"
+//#include "es_wifi_io.h"
 
 /* Socket and WiFi interface includes. */
 #include "aws_secure_sockets.h"
-#include "aws_wifi.h"
+//#include "aws_wifi.h"
 
 /* WiFi configuration includes. */
-#include "aws_wifi_config.h"
+//#include "aws_wifi_config.h"
 
 /**
  * @brief A Flag to indicate whether or not a socket is

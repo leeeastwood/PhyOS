@@ -42,39 +42,26 @@
 #include "task.h"
 
 /* Demo includes */
-#include "aws_demo_runner.h"
 #include "aws_system_init.h"
-#include "aws_logging_task.h"
-#include "aws_wifi.h"
-#include "aws_clientcredential.h"
-#include "aws_dev_mode_key_provisioning.h"
 
 #define mainLOGGING_TASK_STACK_SIZE         ( configMINIMAL_STACK_SIZE * 5 )
 #define mainLOGGING_MESSAGE_QUEUE_LENGTH    ( 15 )
 
 void vApplicationDaemonTaskStartupHook( void );
 
-/**********************
-* Global Variables
-**********************/
-RTC_HandleTypeDef xHrtc;
-RNG_HandleTypeDef xHrng;
 
 /* Private variables ---------------------------------------------------------*/
 static UART_HandleTypeDef xConsoleUart;
 
 /* Private function prototypes -----------------------------------------------*/
 static void SystemClock_Config( void );
-static void Console_UART_Init( void );
-static void RTC_Init( void );
-static void prvWifiConnect( void );
 
 /**
  * @brief Initializes the STM32L475 IoT node board.
  *
  * Initialization of clock, LEDs, RNG, RTC, and WIFI module.
  */
-static void prvMiscInitialization( void );
+//static void prvMiscInitialization( void );
 
 /**
  * @brief Initializes the FreeRTOS heap.
@@ -84,6 +71,17 @@ static void prvMiscInitialization( void );
  */
 static void prvInitializeHeap( void );
 
+
+void blinkTask(void *pvParameters){
+	volatile unsigned int a = 0;
+	for(;;){
+		BSP_LED_On(LED2);
+		for(a = 0; a < 1000000; a++);
+		BSP_LED_Off(LED2);
+		for(a = 0; a < 1000000; a++);
+	}
+}
+
 /**
  * @brief Application runtime entry point.
  */
@@ -91,17 +89,24 @@ int main( void )
 {
     /* Perform any hardware initialization that does not require the RTOS to be
      * running.  */
-    prvMiscInitialization();
+    //prvMiscInitialization();
 
-    /* Create tasks that are not dependent on the WiFi being initialized. */
-    xLoggingTaskInitialize( mainLOGGING_TASK_STACK_SIZE,
-                            configMAX_PRIORITIES - 1,
-                            mainLOGGING_MESSAGE_QUEUE_LENGTH );
+	/* Configure the system clock. */
+	SystemClock_Config();
+
+	/* Heap_5 is being used because the RAM is not contiguous in memory, so the
+	 * heap must be initialized. */
+	prvInitializeHeap();
+    BSP_LED_Init( LED_GREEN );
+
+    xTaskCreate(blinkTask,"BlinkTask",1000,NULL,1,NULL);
 
     /* Start the scheduler.  Initialization that requires the OS to be running,
      * including the WiFi initialization, is performed in the RTOS daemon task
      * startup hook. */
     vTaskStartScheduler();
+
+    for(;;);
 
     return 0;
 }
@@ -112,78 +117,17 @@ void vApplicationDaemonTaskStartupHook( void )
     /* A simple example to demonstrate key and certificate provisioning in
      * microcontroller flash using PKCS#11 interface. This should be replaced
      * by production ready key provisioning mechanism. */
-    vDevModeKeyProvisioning();
+    //vDevModeKeyProvisioning();
 
     if( SYSTEM_Init() == pdPASS )
     {
         /* Connect to the WiFi before running the demos */
-        prvWifiConnect();
+        //prvWifiConnect();
 
-        DEMO_RUNNER_RunDemos();
     }
 }
 
 /*-----------------------------------------------------------*/
-static void prvWifiConnect( void )
-{
-    WIFINetworkParams_t xNetworkParams;
-    WIFIReturnCode_t xWifiStatus;
-
-    uint8_t ucIPAddr[ 4 ];
-
-    /* Setup WiFi parameters to connect to access point. */
-    xNetworkParams.pcSSID = clientcredentialWIFI_SSID;
-    xNetworkParams.ucSSIDLength = sizeof( clientcredentialWIFI_SSID );
-    xNetworkParams.pcPassword = clientcredentialWIFI_PASSWORD;
-    xNetworkParams.ucPasswordLength = sizeof( clientcredentialWIFI_PASSWORD );
-    xNetworkParams.xSecurity = clientcredentialWIFI_SECURITY;
-
-    xWifiStatus = WIFI_On();
-
-    if( xWifiStatus == eWiFiSuccess )
-    {
-        configPRINTF( ( "WiFi module initialized.\r\n" ) );
-
-        /* Try connecting using provided wifi credentials. */
-        xWifiStatus = WIFI_ConnectAP( &( xNetworkParams ) );
-
-        if( xWifiStatus == eWiFiSuccess )
-        {
-            configPRINTF( ( "WiFi connected to AP %s.\r\n", xNetworkParams.pcSSID ) );
-
-            /* Get IP address of the device. */
-            WIFI_GetIP( &ucIPAddr[ 0 ] );
-
-            configPRINTF( ( "IP Address acquired %d.%d.%d.%d\r\n",
-                            ucIPAddr[ 0 ], ucIPAddr[ 1 ], ucIPAddr[ 2 ], ucIPAddr[ 3 ] ) );
-        }
-        else
-        {
-            /* Connection failed configure softAP to allow user to set wifi credentials. */
-            configPRINTF( ( "WiFi failed to connect to AP %s.\r\n", xNetworkParams.pcSSID ) );
-
-            xNetworkParams.pcSSID = wificonfigACCESS_POINT_SSID_PREFIX;
-            xNetworkParams.pcPassword = wificonfigACCESS_POINT_PASSKEY;
-            xNetworkParams.xSecurity = wificonfigACCESS_POINT_SECURITY;
-            xNetworkParams.cChannel = wificonfigACCESS_POINT_CHANNEL;
-
-            configPRINTF( ( "Connect to softAP %s using password %s. \r\n",
-                            xNetworkParams.pcSSID, xNetworkParams.pcPassword ) );
-
-            while( WIFI_ConfigureAP( &xNetworkParams ) != eWiFiSuccess )
-            {
-                configPRINTF( ( "Connect to softAP %s using password %s and configure WiFi. \r\n",
-                                xNetworkParams.pcSSID, xNetworkParams.pcPassword ) );
-            }
-
-            configPRINTF( ( "WiFi configuration successful. \r\n", xNetworkParams.pcSSID ) );
-        }
-    }
-    else
-    {
-        configPRINTF( ( "WiFi module failed to initialize.\r\n" ) );
-    }
-}
 
 
 /*-----------------------------------------------------------*/
@@ -261,40 +205,6 @@ void vSTM32L475putc( void * pv,
 /*-----------------------------------------------------------*/
 
 /**
- * @brief Initializes the board.
- */
-static void prvMiscInitialization( void )
-{
-    /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-    HAL_Init();
-
-    /* Configure the system clock. */
-    SystemClock_Config();
-
-    /* Heap_5 is being used because the RAM is not contiguous in memory, so the
-     * heap must be initialized. */
-    prvInitializeHeap();
-
-    BSP_LED_Init( LED_GREEN );
-    BSP_PB_Init( BUTTON_USER, BUTTON_MODE_EXTI );
-
-    /* RNG init function. */
-    xHrng.Instance = RNG;
-
-    if( HAL_RNG_Init( &xHrng ) != HAL_OK )
-    {
-        Error_Handler();
-    }
-
-    /* RTC init. */
-    RTC_Init();
-
-    /* UART console init. */
-    Console_UART_Init();
-}
-/*-----------------------------------------------------------*/
-
-/**
  * @brief Initializes the system clock.
  */
 static void SystemClock_Config( void )
@@ -361,70 +271,7 @@ static void SystemClock_Config( void )
 }
 /*-----------------------------------------------------------*/
 
-/**
- * @brief UART console initialization function.
- */
-static void Console_UART_Init( void )
-{
-    xConsoleUart.Instance = USART1;
-    xConsoleUart.Init.BaudRate = 115200;
-    xConsoleUart.Init.WordLength = UART_WORDLENGTH_8B;
-    xConsoleUart.Init.StopBits = UART_STOPBITS_1;
-    xConsoleUart.Init.Parity = UART_PARITY_NONE;
-    xConsoleUart.Init.Mode = UART_MODE_TX_RX;
-    xConsoleUart.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-    xConsoleUart.Init.OverSampling = UART_OVERSAMPLING_16;
-    xConsoleUart.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
-    xConsoleUart.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-    BSP_COM_Init( COM1, &xConsoleUart );
-}
-/*-----------------------------------------------------------*/
 
-/**
- * @brief RTC init function.
- */
-static void RTC_Init( void )
-{
-    RTC_TimeTypeDef xsTime;
-    RTC_DateTypeDef xsDate;
-
-    /* Initialize RTC Only. */
-    xHrtc.Instance = RTC;
-    xHrtc.Init.HourFormat = RTC_HOURFORMAT_24;
-    xHrtc.Init.AsynchPrediv = 127;
-    xHrtc.Init.SynchPrediv = 255;
-    xHrtc.Init.OutPut = RTC_OUTPUT_DISABLE;
-    xHrtc.Init.OutPutRemap = RTC_OUTPUT_REMAP_NONE;
-    xHrtc.Init.OutPutPolarity = RTC_OUTPUT_POLARITY_HIGH;
-    xHrtc.Init.OutPutType = RTC_OUTPUT_TYPE_OPENDRAIN;
-
-    if( HAL_RTC_Init( &xHrtc ) != HAL_OK )
-    {
-        Error_Handler();
-    }
-
-    /* Initialize RTC and set the Time and Date. */
-    xsTime.Hours = 0x12;
-    xsTime.Minutes = 0x0;
-    xsTime.Seconds = 0x0;
-    xsTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
-    xsTime.StoreOperation = RTC_STOREOPERATION_RESET;
-
-    if( HAL_RTC_SetTime( &xHrtc, &xsTime, RTC_FORMAT_BCD ) != HAL_OK )
-    {
-        Error_Handler();
-    }
-
-    xsDate.WeekDay = RTC_WEEKDAY_FRIDAY;
-    xsDate.Month = RTC_MONTH_JANUARY;
-    xsDate.Date = 0x24;
-    xsDate.Year = 0x17;
-
-    if( HAL_RTC_SetDate( &xHrtc, &xsDate, RTC_FORMAT_BCD ) != HAL_OK )
-    {
-        Error_Handler();
-    }
-}
 /*-----------------------------------------------------------*/
 
 /**
@@ -440,20 +287,6 @@ void Error_Handler( void )
 }
 /*-----------------------------------------------------------*/
 
-/**
- * @brief Warn user if pvPortMalloc fails.
- *
- * Called if a call to pvPortMalloc() fails because there is insufficient
- * free memory available in the FreeRTOS heap.  pvPortMalloc() is called
- * internally by FreeRTOS API functions that create tasks, queues, software
- * timers, and semaphores.  The size of the FreeRTOS heap is set by the
- * configTOTAL_HEAP_SIZE configuration constant in FreeRTOSConfig.h.
- *
- */
-void vApplicationMallocFailedHook()
-{
-    configPRINTF( ( "ERROR: Malloc failed to allocate memory\r\n" ) );
-}
 /*-----------------------------------------------------------*/
 
 /**
@@ -477,36 +310,20 @@ void vApplicationStackOverflowHook( TaskHandle_t xTask,
 }
 /*-----------------------------------------------------------*/
 
-void vApplicationIdleHook( void )
-{
+void vApplicationIdleHook( void ){
 }
 /*-----------------------------------------------------------*/
+
+void vApplicationMallocFailedHook()
+{
+    //configPRINTF( ( "ERROR: Malloc failed to allocate memory\r\n" ) );
+}
 
 void * malloc( size_t xSize )
 {
     configASSERT( xSize == ~0 );
 
     return NULL;
-}
-/*-----------------------------------------------------------*/
-
-
-void vOutputChar( const char cChar,
-                  const TickType_t xTicksToWait )
-{
-    ( void ) cChar;
-    ( void ) xTicksToWait;
-}
-/*-----------------------------------------------------------*/
-
-void vMainUARTPrintString( char * pcString )
-{
-    const uint32_t ulTimeout = 3000UL;
-
-    HAL_UART_Transmit( &xConsoleUart,
-                       ( uint8_t * ) pcString,
-                       strlen( pcString ),
-                       ulTimeout );
 }
 /*-----------------------------------------------------------*/
 
