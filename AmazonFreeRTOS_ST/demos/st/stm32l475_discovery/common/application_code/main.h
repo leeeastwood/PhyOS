@@ -62,7 +62,7 @@
 #include "stm32l475e_iot01_hsensor.h"
 #include "stm32l475e_iot01_tsensor.h"
 #include "stm32l475e_iot01_magneto.h"
-#include "vl53l0x_proximity.h"
+//#include "vl53l0x_proximity.h"
 
 #include <string.h>
 #include <stdlib.h>

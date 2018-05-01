@@ -509,13 +509,14 @@ BaseType_t xListWasEmpty;
 
 	#if( configUSE_DAEMON_TASK_STARTUP_HOOK == 1 )
 	{
-		extern void vApplicationDaemonTaskStartupHook( void );
+		//extern void vApplicationDaemonTaskStartupHook( void );
 
 		/* Allow the application writer to execute some code in the context of
 		this task at the point the task starts executing.  This is useful if the
 		application includes initialisation code that would benefit from
 		executing after the scheduler has been started. */
-		vApplicationDaemonTaskStartupHook();
+
+		//vApplicationDaemonTaskStartupHook();
 	}
 	#endif /* configUSE_DAEMON_TASK_STARTUP_HOOK */
 

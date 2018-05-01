@@ -41,11 +41,6 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>application_code/common_demos</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
 			<name>lib/aws</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
@@ -66,39 +61,14 @@
 			<locationURI>AWS_IOT_MCU_ROOT/lib/bufferpool</locationURI>
 		</link>
 		<link>
-			<name>lib/aws/crypto</name>
-			<type>2</type>
-			<locationURI>AWS_IOT_MCU_ROOT/lib/crypto</locationURI>
-		</link>
-		<link>
 			<name>lib/aws/include</name>
 			<type>2</type>
 			<locationURI>AWS_IOT_MCU_ROOT/lib/include</locationURI>
 		</link>
 		<link>
-			<name>lib/aws/utils</name>
-			<type>2</type>
-			<locationURI>AWS_IOT_MCU_ROOT/lib/utils</locationURI>
-		</link>
-		<link>
-			<name>lib/third_party/mbedtls</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
 			<name>lib/third_party/mcu_vendor</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
-			<name>lib/third_party/mbedtls/include</name>
-			<type>2</type>
-			<locationURI>AWS_IOT_MCU_ROOT/lib/third_party/mbedtls/include</locationURI>
-		</link>
-		<link>
-			<name>lib/third_party/mbedtls/source</name>
-			<type>2</type>
-			<locationURI>AWS_IOT_MCU_ROOT/lib/third_party/mbedtls/library</locationURI>
 		</link>
 		<link>
 			<name>lib/third_party/mcu_vendor/st</name>

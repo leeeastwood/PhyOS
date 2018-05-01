@@ -47,8 +47,6 @@
 #define mainLOGGING_TASK_STACK_SIZE         ( configMINIMAL_STACK_SIZE * 5 )
 #define mainLOGGING_MESSAGE_QUEUE_LENGTH    ( 15 )
 
-void vApplicationDaemonTaskStartupHook( void );
-
 
 /* Private variables ---------------------------------------------------------*/
 static UART_HandleTypeDef xConsoleUart;
@@ -111,21 +109,6 @@ int main( void )
     return 0;
 }
 /*-----------------------------------------------------------*/
-
-void vApplicationDaemonTaskStartupHook( void )
-{
-    /* A simple example to demonstrate key and certificate provisioning in
-     * microcontroller flash using PKCS#11 interface. This should be replaced
-     * by production ready key provisioning mechanism. */
-    //vDevModeKeyProvisioning();
-
-    if( SYSTEM_Init() == pdPASS )
-    {
-        /* Connect to the WiFi before running the demos */
-        //prvWifiConnect();
-
-    }
-}
 
 /*-----------------------------------------------------------*/
 

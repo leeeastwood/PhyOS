@@ -43,7 +43,7 @@ BaseType_t SYSTEM_Init( void )
 
     if( xResult == pdPASS )
     {
-        xResult = BUFFERPOOL_Init();
+        //xResult = BUFFERPOOL_Init();
     }
 
     if( xResult == pdPASS )
