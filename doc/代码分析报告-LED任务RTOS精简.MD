@@ -1,4 +1,5 @@
-﻿AmazonFreeRTOS_ST\
+格式直接看有点乱，点右上方Raw查看效果更佳
+AmazonFreeRTOS_ST\
 + - demos\st\stm32l475_discovery\common\
 	+ - application_code\
 	|	+ - st_code\ 总文件数量7，大小52027字节
