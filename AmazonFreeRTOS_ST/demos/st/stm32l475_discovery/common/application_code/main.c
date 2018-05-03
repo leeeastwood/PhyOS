@@ -42,7 +42,7 @@
 #include "task.h"
 
 /* Demo includes */
-#include "aws_system_init.h"
+//#include "aws_system_init.h"
 
 #define mainLOGGING_TASK_STACK_SIZE         ( configMINIMAL_STACK_SIZE * 5 )
 #define mainLOGGING_MESSAGE_QUEUE_LENGTH    ( 15 )
