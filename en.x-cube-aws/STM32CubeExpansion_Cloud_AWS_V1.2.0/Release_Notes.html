@@ -1,0 +1,596 @@
+<html>
+<head>
+<style>
+<!--
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+{margin-top:0cm;margin-right:0cm;margin-bottom:8pt;margin-left:0cm;line-height:normal;font-size:10.0pt;font-family:Verdana,sans-serif;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+{margin-top:0cm;margin-right:0cm;margin-bottom:2pt;margin-left:0cm;line-height:normal;font-size:10.0pt;font-family:Verdana,sans-serif;}
+-->
+</style>
+<title>
+X-CUBE-AWS Release Notes
+</title>
+</head>
+<body lang=EN-US>
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><b><span style='font-size:18.0pt;color: rgb(51, 102, 255)'>
+Release Notes for
+</span></b></p>
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><b><span style='font-size:18.0pt;color: rgb(51, 102, 255)'>
+X-CUBE-AWS
+</span></b></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal align=center style='line-height:center;line-height:normal'><span style='font-size:10.0pt'>
+Copyright © 2018 STMicroelectronics
+</span></p>
+<p class=MsoNormal align=center style='line-height:center;line-height:normal'><span style='font-size:10.0pt'>
+Microcontrollers Division - Application Team
+</span></p>
+<p class=MsoNormal align=center> <img id=_rnc_img0 src=./_htmresc/st_logo.png border=0> </span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<table class=MsoNormal border=0 cellspacing=0 cellpadding=0 width=100%
+style='margin-left:4cm;margin-right:4cm;width:80%;background:rgb(51, 102, 255)'>
+<td style='padding:0cm 5.4pt 0cm 5.4pt'>
+<p class=MsoNormal style='margin-left:0cm;margin-bottom:0cm;line-height:normal'><b><span style='font-size:12.0pt;color:white'>
+Overview</span></b></p></td></tr></table>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+The <b>X-CUBE-AWS</b> (STM32 AWS IoT software expansion for STM32Cube) provides ready-to-run firmware examples to support quick evaluation and development of AWS IoT Cloud applications on B-L475E-IOT01, 32F413HDISCOVERY and 32F769IDISCOVERY boards. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Three IDE are supported: IAR, Keil and System Workbench. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+It contains BSP compatible sensor drivers for B-L475E-IOT01. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Below the most useful document: 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ UM2178 - STM32 AWS IoT software expansion for STM32Cube. <p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<table class=MsoNormal border=0 cellspacing=0 cellpadding=0 width=100%
+style='margin-left:4cm;margin-right:4cm;width:80%;background:rgb(51, 102, 255)'>
+<td style='padding:0cm 5.4pt 0cm 5.4pt'>
+<p class=MsoNormal style='margin-left:0cm;margin-bottom:0cm;line-height:normal'><b><span style='font-size:12.0pt;color:white'>
+Update History</span></b></p></td></tr></table>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;&nbsp;</span></p>
+<table class=MsoNormal border=0 cellspacing=0 cellpadding=0 width=100%
+style='margin-left:4cm;width:23%;background:rgb(51, 102, 255)'>
+<td align=left style='padding:0cm 5.4pt 0cm 5.4pt'>
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span style='font-size:10.0pt;color:white'>
+V1.2.0  /  2-February-2018</span></b></p></td></tr></table>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Main Changes
+</span></u></b></p>
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Updated dependencies (see Content list below). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Updated to last versions of HAL, BSP, "AWS IoT device SDK for embedded C", LwIP and mbedTLS. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Bug fixes. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ ES_WIFI driver (B-L475E-IOT01, 32F413HDISCOVERY): driver improvements. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Fix potential memory overflow happening on disconnection. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Improve error management on disconnection. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Improve SPI signals timing to speed up device communication. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Simplify Send and Received SPI functions. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Move to interrupt driver management. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Support Bare Metal and RTOS environment. 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Content
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Drivers. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ STM32L4xx HAL V1.8.2 (<a href="Drivers/STM32L4xx_HAL_Driver/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ STM32F4xx HAL V1.7.3 (<a href="Drivers/STM32F4xx_HAL_Driver/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ STM32F7xx HAL V1.2.4 (<a href="Drivers/STM32F7xx_HAL_Driver/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ CMSIS V4.5.0 (<a href="Drivers/CMSIS/Documentation/General/html/_c_m_revision_history.html">revision history</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ CMSIS STM32l4xx V1.4.2 (<a href="Drivers/CMSIS/Device/ST/STM32L4xx/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ CMSIS STM32f4xx V2.6.2 (<a href="Drivers/CMSIS/Device/ST/STM32F4xx/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ CMSIS STM32f7xx V1.2.2 (<a href="Drivers/CMSIS/Device/ST/STM32F7xx/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ BSP B-L475E-IOT01 V1.1.1 (<a href="Drivers/BSP/B-L475E-IOT01/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ BSP STM32F413H-Discovery V1.0.1 (<a href="Drivers/BSP/STM32F413H-Discovery/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ BSP STM32F769I-Discovery V2.0.1 (<a href="Drivers/BSP/STM32F769I-Discovery/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ BSP Components: 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ ADV7533 V1.0.2 (<a href="Drivers/BSP/Components/adv7533/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Common V5.0.0 (<a href="Drivers/BSP/Components/Common/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ HTS221 V1.0.0 (<a href="Drivers/BSP/Components/hts221/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ LIS3MDL V1.0.0 (<a href="Drivers/BSP/Components/lis3mdl/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ LPS22HB V1.0.0 (<a href="Drivers/BSP/Components/lps22hb/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ LSM6DSL V1.0.0 (<a href="Drivers/BSP/Components/lsm6dsl/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ MFXSTM32L152 V2.0.1 (<a href="Drivers/BSP/Components/mfxstm32l152/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ OTM8009A V1.0.3 (<a href="Drivers/BSP/Components/otm8009a/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ SPIRIT1 V3.2.3 (<a href="Drivers/BSP/Components/spirit1/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ ST7789h2 V1.1.2 (<a href="Drivers/BSP/Components/st7789h2/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Middleware. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Amazon AWS middleware V2.2.1 2017-12-26 (<a href="Middlewares/Third_Party/AWS/CHANGELOG.md">release notes</a>) ST modified 2018-02-01 (<a href="Middlewares/Third_Party/AWS/st_readme.txt">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ FreeRTOS V9.0.0 (<a href="Middlewares/Third_Party/FreeRTOS/Source/readme.txt">release notes</a>) ST modified 2017-08-10 (<a href="Middlewares/Third_Party/FreeRTOS/Source/st_readme.txt">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ LwIP V2.0.3 2017-09-11 (<a href="Middlewares/Third_Party/LwIP/CHANGELOG">release notes</a>) ST modified 20171110 (<a href="Middlewares/Third_Party/LwIP/st_readme.txt">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ mbedTLS V2.6.1 2017-10-08 (<a href="Middlewares/Third_Party/mbedTLS/ChangeLog">release notes</a>) ST modified 2017-11-10 (<a href="Middlewares/Third_Party/mbedTLS/st_readme.txt">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Application. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Amazon AWS IoT cloud application. 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Development Toolchains and Compilers
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ IAR Embedded Workbench for ARM (EWARM). Version 7.80.4 or higher must be used. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Keil Microcontroller Development Kit (MDK-ARM) Version 5.24. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ System Workbench for STM32. Version 2.1.0 or higher must be used. 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Supported Devices and EVAL boards
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ B-L475E-IOT01 board (MB1297 rev D). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ B-L475E-IOT01 board (MB1297 rev B and C) with limitations for System Workbench tools. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ 32F413HDISCOVERY board (MB1274 rev B). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ 32F769IDISCOVERY board (MB1225 rev B). 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Known Limitations
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Network connection instability on B-L475E-IOT01 and 32F413HDISCOVERY: 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ The board may not connect to the WiFi access point at first trial. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ The resolution of the remote host name sometimes fails - it seems to depend on the cache status of the DNS server of the local network. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Remote server disconnection reported as a system error by the WiFi module. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+The Remote Firmware Update has been obsoleted and is not provided anymore. It will be replaced and based on the Secure Boot and Secure Firmware Update component. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+System Workbench for STM32. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ The credentials are erased when the debugger is launched again. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ B-L475E-IOT01 board rev B and rev C requires to use System Workbench with version greater or equal to 2.1. A debug option must be changed: 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Right click on the project, select "Debus as...", "Debug Configuration...", the "B-L475E-IOT01.elf" target, then the "Debugger" tab. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ If the "Reset Mode" option is not visible, click on the "Show generator options..." button. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ The "Reset Mode" option must be set to "Software system reset". 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;&nbsp;</span></p>
+<table class=MsoNormal border=0 cellspacing=0 cellpadding=0 width=100%
+style='margin-left:4cm;width:23%;background:rgb(51, 102, 255)'>
+<td align=left style='padding:0cm 5.4pt 0cm 5.4pt'>
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span style='font-size:10.0pt;color:white'>
+V1.1.0  /  1-September-2017</span></b></p></td></tr></table>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Main Changes
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Updated dependencies (see contents list below). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Bug fixes. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ ES_WIFI driver (B-L475E-IOT01, 32F413H-DISCO): Solved random network disconnections that were due to a de-synchronization between the SPI and the GPIO. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ TCP/IP configuration (32F769I-DISCO). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Generate a unique MAC address derived from the CPU ID in order to avoid address collisions when several F7 boards are connected to the same LAN. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Activate the local port number true randomization, to avoid possible TLS session confusions on server side after a board reset. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Activate the TCP keep-alive. Otherwise, the remote host may disconnect earlier than the first MQTT keep-alive message. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Improved error management. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Other changes. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Introduction of an internal network socket abstraction layer: NET API. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Source tree update to isolate the files which are common to all Cloud Cube packages. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+RFU. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Complies to HTTP 1.1. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Inter-operable with the Apache web server. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Supports server-side connection close, and client reconnection. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Supports HTTPS (the root CA certificate must be provisioned together with the Cloud and time servers'). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ RTC initialization from HTTP. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Network load reduction: HEAD command instead of GET. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Supports HTTPS (the root CA certificate must be provisioned together with the Cloud and RFU servers'. See the application readme.txt for more details). 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Content
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Drivers. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ STM32L4xx HAL V1.8.0 (<a href="Drivers/STM32L4xx_HAL_Driver/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ STM32F4xx HAL V1.7.0 (<a href="Drivers/STM32F4xx_HAL_Driver/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ STM32F7xx HAL V1.2.3 (<a href="Drivers/STM32F7xx_HAL_Driver/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ CMSIS V4.5.0 (<a href="Drivers/CMSIS/Documentation/General/html/_c_m_revision_history.html">revision history</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ CMSIS STM32l4xx V1.4.0 (<a href="Drivers/CMSIS/Device/ST/STM32L4xx/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ CMSIS STM32f4xx V2.6.1 (<a href="Drivers/CMSIS/Device/ST/STM32F4xx/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ CMSIS STM32f7xx V1.2.1 (<a href="Drivers/CMSIS/Device/ST/STM32F7xx/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ BSP B-L475E-IOT01 V1.1.0 (<a href="Drivers/BSP/B-L475E-IOT01/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ BSP STM32F413H-Discovery V1.0.0 (<a href="Drivers/BSP/STM32F413H-Discovery/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ BSP STM32F769I-Discovery V2.0.1 (<a href="Drivers/BSP/STM32F769I-Discovery/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ BSP Components: 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Common V5.0.0 (<a href="Drivers/BSP/Components/Common/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ ADV7533 V1.0.2 (<a href="Drivers/BSP/Components/adv7533/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ OTM8009A V1.0.3 (<a href="Drivers/BSP/Components/otm8009a/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ HTS221 V1.0.0 (<a href="Drivers/BSP/Components/hts221/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ LIS3MDL V1.0.0 (<a href="Drivers/BSP/Components/lis3mdl/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ LPS22HB V1.0.0 (<a href="Drivers/BSP/Components/lps22hb/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ LSM6DSL V1.0.0 (<a href="Drivers/BSP/Components/lsm6dsl/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ ST7789h2 V1.1.2 (<a href="Drivers/BSP/Components/st7789h2/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ MFXSTM32L152 V2.0.1 (<a href="Drivers/BSP/Components/mfxstm32l152/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ SPIRIT1 V3.2.3 (<a href="Drivers/BSP/Components/spirit1/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Middleware. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Amazon AWS middleware (<a href="Middlewares/Third_Party/AWS/CHANGELOG.md">release notes</a>) ST modified 20170127 (<a href="Middlewares/Third_Party/AWS/st_readme.txt">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ FreeRTOS V9.0.0 (<a href="Middlewares/Third_Party/FreeRTOS/Source/readme.txt">release notes</a>) ST modified 20170810 (<a href="Middlewares/Third_Party/FreeRTOS/Source/st_readme.txt">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ LwIP V2.0.0 (<a href="Middlewares/Third_Party/LwIP/CHANGELOG">release notes</a>) ST modified 20161223 (<a href="Middlewares/Third_Party/LwIP/st_readme.txt">release notes</a>) package-modified 2017-09-01. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ mbedTLS V2.4.0 (<a href="Middlewares/Third_Party/mbedTLS/ChangeLog">release notes</a>) ST modified 20161223 (<a href="Middlewares/Third_Party/mbedTLS/st_readme.txt">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Application. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Amazon AWS IoT cloud application. 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Development Toolchains and Compilers
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ IAR Embedded Workbench for ARM (EWARM). Version 7.80.4 or higher must be used. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Keil Microcontroller Development Kit (MDK-ARM) Version 5.24. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ System Workbench for STM32. Version 2.0.0 or higher must be used. 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Supported Devices and EVAL boards
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+B-L475E-IOT01 board (MB1297 rev B). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+32F413H-DISCO board (MB1274 rev B). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+32F769I-DISCO board (MB1225 rev B). 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Known Limitations
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ The Remote Firmware Update feature is provided as a demonstration of how the HTTP protocol and a simple file format can be used to modify arbitrary sections of a flash bank, without requiring to dump and overwrite the full Flash memory. It has been tested with Apache 2.4.18, and with a simple node.js server which illustrates HTTP range requests. Credit: https://www.codeproject.com/Articles/813480/HTTP-Partial-Content-In-Node-js. 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;&nbsp;</span></p>
+<table class=MsoNormal border=0 cellspacing=0 cellpadding=0 width=100%
+style='margin-left:4cm;width:23%;background:rgb(51, 102, 255)'>
+<td align=left style='padding:0cm 5.4pt 0cm 5.4pt'>
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span style='font-size:10.0pt;color:white'>
+V1.0.0  /  31-March-2017</span></b></p></td></tr></table>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Main Changes
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ <b>First official release</b>. 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Content
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Drivers. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ STM32L4xx HAL V1.7.0 (<a href="Drivers/STM32L4xx_HAL_Driver/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ BSP B-L475E-IOT01 V1.0.0 (<a href="Drivers/BSP/B-L475E-IOT01/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ STM32F4xx HAL V1.7.0 (<a href="Drivers/STM32F4xx_HAL_Driver/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ STM32F7xx HAL V1.2.1 (<a href="Drivers/STM32F7xx_HAL_Driver/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ BSP Common V5.0.0 (<a href="Drivers/BSP/Components/Common/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ BSP Component ES_WIFI V1.0.0 (<a href="Drivers/BSP/Components/es_wifi/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ BSP Component HTS221 V3.0.0 (<a href="Drivers/BSP/Components/hts221/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ BSP Component LIS3MDL V3.0.0 (<a href="Drivers/BSP/Components/lis3mdl/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ BSP Component LPS22HB V3.0.0 (<a href="Drivers/BSP/Components/lps22hb/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ BSP Component LSM6DSL V3.0.0 (<a href="Drivers/BSP/Components/lsm6dsl/Release_Notes.html">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Middleware. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Amazon AWS middleware (<a href="Middlewares/Third_Party/AWS/CHANGELOG.md">release notes</a>) ST modified 20170127 (<a href="Middlewares/Third_Party/AWS/st_readme.txt">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ FreeRTOS V9.0.0 (<a href="Middlewares/Third_Party/FreeRTOS/Source/readme.txt">release notes</a>) ST modified 20170303 (<a href="Middlewares/Third_Party/FreeRTOS/Source/st_readme.txt">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ LwIP V2.0.0 (<a href="Middlewares/Third_Party/LwIP/CHANGELOG">release notes</a>) ST modified 20161223 (<a href="Middlewares/Third_Party/LwIP/st_readme.txt">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ mbedTLS V2.4.0 (<a href="Middlewares/Third_Party/mbedTLS/ChangeLog">release notes</a>) ST modified 20161223 (<a href="Middlewares/Third_Party/mbedTLS/st_readme.txt">release notes</a>). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Application. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Amazon AWS IoT cloud application. 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Development Toolchains and Compilers
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ IAR Embedded Workbench for ARM (EWARM). Version 7.80.4 or higher must be used. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Keil Microcontroller Development Kit (MDK-ARM) Version 5.22. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ System Workbench for STM32. Version 1.14.0 or higher must be used. 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Supported Devices and EVAL boards
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+B-L475E-IOT01 board (MB1297 rev B). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+32F413H-DISCO board (MB1274 rev B). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+32F769I-DISCO board (MB1225 rev B). 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Known Limitations
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ A workaround is required to debug the B-L475E-IOT01 board with System Workbench: 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ In case of B-L475E-IOT01 board rev B or C, it is needed to uncomment line "reset_config none separate" in OpenOCD configuration file STM32L475VG.cfg provided under SW4STM32 directory. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Furthermore, some versions of System Workbench may have problem to read the OpenOCD configuration file if it is placed in project directory. In that case, copy STM32L475VG.cfg outside of sources directory (for example to c:\) and use it from here (in System Workbench menu "Run/Debug configuration", create or choose STM32L475 configuration, go to Debugger Tab, Select "Script/Use local script", indicate the copied script in the "Configuration Script" field). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ The Remote Firmware Update feature is provided as a demonstration of how the HTTP protocol and a simple file format can be used to modify arbitrary sections of a flash bank, without requiring to dump and overwrite the full Flash memory. It has been tested with a simple node.js server which illustrates HTTP range requests. Credit: https://www.codeproject.com/Articles/813480/HTTP-Partial-Content-In-Node-js. 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<table class=MsoNormal border=0 cellspacing=0 cellpadding=0 width=100%
+style='margin-left:4cm;margin-right:4cm;width:80%;background:rgb(51, 102, 255)'>
+<td style='padding:0cm 5.4pt 0cm 5.4pt'>
+<p class=MsoNormal style='margin-left:0cm;margin-bottom:0cm;line-height:normal'><b><span style='font-size:12.0pt;color:white'>
+License</span></b></p></td></tr></table>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;margin-right:4cm;line-height:normal'><span style='font-size:10.0pt;color:black'>This software package is licensed under ST license SLA0048, (the "License").
+You may not use this package except in compliance with the License.
+You may obtain a copy of the License at:
+
+
+</span></p>
+<p class=MsoNormal style='text-align:center;line-height:normal'><span style='font-size:10.0pt'>
+<a href=http://www.st.com/SLA0048> http://www.st.com/SLA0048</a></span></p>
+<p class=MsoNormal style='margin-left:4cm;margin-right:4cm;line-height:normal'><span style='font-size:10.0pt;color:black'>Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</a></span></p>
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;</span></b></p>
+<table class=MsoNormal border=0 cellspacing=0 cellpadding=0 width=100%
+style='margin-left:4cm;margin-right:4cm;width:80%;background:rgb(51, 102, 255)'>
+<td style='padding:0cm 5.4pt 0cm 5.4pt'>
+<p class=MsoNormal style='margin-left:0cm;margin-bottom:0cm;line-height:4pt'><b><span style='font-size:10.0pt;color:rgb(51, 102, 255)'>
+---</span></b></p></td></tr></table>
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;</span></b></p>
+<p class=MsoNormal style='text-align:center;line-height:normal'><span style='font-size:10.0pt'>
+For complete documentation on <b>STM32</b> microcontrollers please visit <a href=http://www.st.com/stm32> http://www.st.com/stm32</a></span></p>
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;</span></b></p>
+<p class=MsoNormal align=right style='margin-right:1cm;line-height:normal'><span style='font-size:8.0pt'>Generated by RNcreator v2.1
+</span></p>
+<!-- Generated by RNcreator v2.1 on  Tue 05/02/2018  -->
+</div>
+</body>
+</html>
