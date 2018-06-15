@@ -15,8 +15,10 @@
 	$ sudo apt-get install libtool-bin
 	```
 	**坑**ncurses-dev和libexpat-dev安装提示错误，并推荐了两个名称类似的包，安装即可。
+	
 	2. 下载
 	$ git clone --recursive https://github.com/pfalcon/esp-open-sdk.git
+	
 	3. 安装
 	进入esp-open-sdk用make命令安装即可
 	**坑**make的时候它还会在其他站点下载依赖，由于那个站点不稳定，无法下载或下载出错，重复好几次才能正常安装。解决方法：
@@ -26,6 +28,7 @@ It boils down to update the URL template in crosstool-NG/scripts/build/companion
 http://downloads.sourceforge.net/project/expat/expat/${CT_EXPAT_VERSION}
 to
 https://github.com/libexpat/libexpat/releases/download/R_${CT_EXPAT_VERSION//[.]/_}
+
 2. esp-open-rtos让用这个`make toolchain esptool libhal STANDALONE=n`命令安装sdk，我是用普通make安装的又用那个走了一遍。
 3. 配置环境变量`export PATH=/home/ubuntu/esp-open-sdk/xtensa-lx106-elf/bin:$PATH`
 **坑**需要进入su用户再配置一遍，因为如果通过串口下载程序需要用root用户
