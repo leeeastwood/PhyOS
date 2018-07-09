@@ -51,5 +51,5 @@ https://github.com/libexpat/libexpat/releases/download/R_${CT_EXPAT_VERSION//[.]
 
 8. http-server 
 **坑**http-server.c文件的最后建立任务时`xTaskCreate(&httpd_task, "HTTP Daemon", 128, NULL, 2, NULL);`分配的128b空间太小，改为384可以运行。最坑的是这个错误在查看通过串口的log才发现。
-
+**坑**esptool.py erase_flash可以清除原有的配置，路由器一直登不上，没法获得IP地址，清除之后就好了。
 该示例运行起来加载的比较慢。
